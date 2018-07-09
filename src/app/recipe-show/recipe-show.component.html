@@ -1,0 +1,17 @@
+<div>
+  <h1>{{recipe.name}}</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Ingredients</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let ingredient of ingredients">
+        <td>
+          {{ingredient.name}}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

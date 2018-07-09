@@ -1,0 +1,26 @@
+<div class="panel">
+<div class="panel-body" style="position:relative">
+  <div class="table-responsive">
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Recipes</th>
+          <th>
+            <!-- <input [(ngModel)]="searchRecipeText" type="text" placeholder="Search"> -->
+            <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+              <button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let recipe of recipes" (click)="show(recipe['id'])">
+          <td>{{recipe.name}}</td>
+          <td><button class="btn btn-primary btn-sm" (click)="update(recipe['id'])">update</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
