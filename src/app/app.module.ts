@@ -10,24 +10,26 @@ import { Angular2TokenService } from 'angular2-token';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { ModalModule } from 'ngx-bootstrap/modal';
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { RecipeListComponent } from './recipe-list/recipe-list.component';
-import { RecipeShowComponent } from './recipe-show/recipe-show.component';
-import { ProductAddComponent } from './product-add/product-add.component';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ToolbarComponent } from './toolbar/toolbar.component';
-import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
-import { AuthDialogContentComponent } from './auth-dialog-content/auth-dialog-content.component';
-import { LoginFormComponent } from './login-form/login-form.component';
-import { RegisterFormComponent } from './register-form/register-form.component';
-
 // services
 import { ApiService } from './services/api.service';
 import { AuthService } from './services/auth.service';
 
 // guards
-import { AuthGuard } from './guards/auth.guard'
+import { AuthGuard } from './guards/auth.guard';
+
+// components
+import { AppComponent } from './app.component';
+import { AuthDialogComponent } from './auth-dialog/auth-dialog.component';
+import { AuthDialogContentComponent } from './auth-dialog-content/auth-dialog-content.component';
+import { BarComponent } from './bar/bar.component'
+import { HomeComponent } from './home/home.component';
+import { LoginFormComponent } from './login-form/login-form.component';
+import { ProductAddComponent } from './product-add/product-add.component';
+import { ProductListComponent } from './product-list/product-list.component';
+import { RecipeListComponent } from './recipe-list/recipe-list.component';
+import { RecipeShowComponent } from './recipe-show/recipe-show.component';
+import { RegisterFormComponent } from './register-form/register-form.component';
+import { ToolbarComponent } from './toolbar/toolbar.component';
 
 const appRoutes: Routes = [
   {
@@ -38,6 +40,11 @@ const appRoutes: Routes = [
   {
     path: 'home',
     component: HomeComponent
+  },
+  {
+    path: 'bar',
+    component: BarComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'recipes',
@@ -80,6 +87,7 @@ const appRoutes: Routes = [
     AuthDialogContentComponent,
     LoginFormComponent,
     RegisterFormComponent,
+    BarComponent,
   ],
   entryComponents: [AuthDialogContentComponent],
   imports: [

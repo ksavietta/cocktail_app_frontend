@@ -18,7 +18,7 @@ export class ProductAddComponent implements OnInit {
     this.acRoute.params.subscribe((data : any)=>{
       console.log(data.id);
       if (data && data.id) {
-          this.apiService.get("products/"+data.id).subscribe((data : Product) => {
+          this.apiService.get("products/"+data.id).subscribe((data : any) => {
           this.product = data;
           });
       } else {

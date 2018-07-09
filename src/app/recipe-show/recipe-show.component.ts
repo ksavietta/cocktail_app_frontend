@@ -20,10 +20,10 @@ export class RecipeShowComponent implements OnInit {
     this.acRoute.params.subscribe((data : any)=>{
       console.log(data.id);
       if (data && data.id) {
-          this.apiService.get("recipes/"+data.id).subscribe((data : Recipe) => {
+          this.apiService.get("recipes/"+data.id).subscribe((data : any) => {
             this.recipe = data;
           });
-          this.apiService.get("recipe_ingredients/", {recipeId: data.id}).subscribe((data : Array<Ingredient>) => {
+          this.apiService.get("recipe_ingredients/", {recipeId: data.id}).subscribe((data : any) => {
             this.ingredients = data;
           });
       } else {

@@ -22,9 +22,6 @@
           <a class="nav-link" routerLink="/bar">Bar</a>
         </li>
         <li *ngIf="(authService.userSignedIn$ | async)" class="nav-item" [routerLinkActive]="['active']">
-          <a [routerLink]="['/profile']" class="nav-link">PROFILE</a>
-        </li>
-        <li *ngIf="(authService.userSignedIn$ | async)" class="nav-item" [routerLinkActive]="['active']">
           <a (click)="logOut()" class="nav-link">LOGOUT</a>
         </li>
       </ul>
